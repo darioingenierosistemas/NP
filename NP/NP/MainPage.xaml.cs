@@ -13,6 +13,8 @@ using NP.BASE_DE_DATOS;
 
 namespace NP
 {
+    //DARIO JOSE SARMIENTO SANIN
+
     public partial class MainPage : ContentPage
     {
         string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
@@ -266,4 +268,6 @@ namespace NP
 
      
     }
+
+    //DARIO JOSE SARMIENTO SANIN
 }
