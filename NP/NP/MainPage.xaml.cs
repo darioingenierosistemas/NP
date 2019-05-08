@@ -30,8 +30,10 @@ namespace NP
             btnPerfecto.Clicked += BtnPerfecto_Clicked;
             btnMostrar.Clicked += BtnMostrar_Clicked;
             btnLimpiar.Clicked += BtnLimpiar_Clicked;
+            
        
         }
+ 
 
         private void BtnMostrar_Clicked(object sender, EventArgs e)
         {
@@ -99,31 +101,37 @@ namespace NP
 
         private async void BtnPerfecto_Clicked(object sender, EventArgs e)
         {
-           
 
-            if (String.IsNullOrEmpty(EdtRango1.Text) || String.IsNullOrEmpty(EdtRango2.Text))
+            try
             {
-
-                await DisplayAlert("MENSAJE", "Los campos de los numeros NO pueden estar vacios.", "OK");
-                Limpiar();
-            }
-            else
-            {
-                int numero1 = Convert.ToInt32(EdtRango1.Text.ToString());
-                int numero2 = Convert.ToInt32(EdtRango2.Text.ToString());
-
-                if (numero1 > numero2)
+                if (String.IsNullOrEmpty(EdtRango1.Text) || String.IsNullOrEmpty(EdtRango2.Text))
                 {
-                    await DisplayAlert("MENSAJE", "El Primer Numero NO PUEDE SER MAYOR que el Segundo Numero.", "OK");
+
+                    await DisplayAlert("MENSAJE", "Los campos de los numeros NO pueden estar vacios.", "OK");
                     Limpiar();
                 }
                 else
                 {
-                Formula();
-                }
-            }
-            btnMostrar.IsVisible = true;
+                    int numero1 = Convert.ToInt32(EdtRango1.Text.ToString());
+                    int numero2 = Convert.ToInt32(EdtRango2.Text.ToString());
 
+                    if (numero1 > numero2)
+                    {
+                        await DisplayAlert("MENSAJE", "El Primer Numero NO PUEDE SER MAYOR que el Segundo Numero.", "OK");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        Formula();
+                    }
+                }
+                btnMostrar.IsVisible = true;
+            }
+            catch(Exception ex)
+            {
+                await DisplayAlert("MENSAJE", "Verifique los valores que esta ingresando", "OK");
+                Limpiar();
+            }
         }
 
         private void Limpiar()
