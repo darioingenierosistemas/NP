@@ -2,13 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NP"
-             x:Class="NP.MainPage">
+             x:Class="NP.MainPage"
+             BackgroundColor="#8BCBF6">
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="NUMEROS PERFECTOS"      
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Label Text="Ingrese el PRIMER NUMERO del Rango"
+                HorizontalOptions="Center"/>
+        <Entry x:Name="EdtRango1" Keyboard="Numeric"/>
+        <Label Text="Ingrese el SEGUNDO NUMERO del Rango"
+                HorizontalOptions="Center"/>
+        <Entry x:Name="EdtRango2" Keyboard="Numeric"/>
+        <Button x:Name="btnPerfecto" Text="BUSCAR NUMEROS PERFECTOS" BackgroundColor="#00FF00"/>
+        <Button x:Name="btnMostrar" Text="MOSTRAR DATOS" IsVisible="False" BackgroundColor="#704BFF"/>
+        <Button x:Name="btnLimpiar" Text="RESET" IsVisible="False" BackgroundColor="#FF2E2E"/>
+        <ListView x:Name="lstMostar"
+                   HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"/>
+      
     </StackLayout>
 
 </ContentPage>

@@ -12,16 +12,24 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage;
+
+using SQLite;
+
 
 namespace NP.UWP
 {
     public sealed partial class MainPage
     {
+
+
         public MainPage()
         {
             this.InitializeComponent();
-
             LoadApplication(new NP.App());
+
         }
+
+
     }
 }
